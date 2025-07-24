@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Micheladas El Sabor Mexicano</title>
+  <meta name="description" content="Micheladas El Sabor Mexicano ofrece recetas únicas con sabor tradicional. Prueba nuestras micheladas clásicas, con camarones y tamarindo.">
+  <meta name="keywords" content="micheladas, cerveza, tamarindo, camarones, Medellín, México, bebidas">
+  <meta name="author" content="El Sabor Mexicano">
+  <link rel="icon" href="imagenes/ag.jpg" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <header id="inicio">
+    <img src="imagenes/ag.jpg" alt="Logo Micheladas" class="logo-redondo" />
+    <h1>Micheladas El Sabor Mexicano 🇲🇽</h1>
+    <p>¡Sabor con identidad mexicana!</p>
+  </header>
+
+  <section class="hero">
+    <span>¡Disfruta la auténtica experiencia micheladera!</span>
+  </section>
+
+  <div class="carousel">
+    <div class="carousel-track">
+      <div class="carousel-slide"><center><img src="Imagenes/imamic.jpg" alt="Carusel 1" style="width:80%" height="250px"  ></center> </div>
+      <div class="carousel-slide"><center><img src="Imagenes/mi.webp" alt="Carusel 2" style="width:80%" height="250px"></center> </div>
+      <div class="carousel-slide"><center><img src="Imagenes/mich.jpg" alt="Carusel 3" style="width:80%" height="250px"></center> </div>
+      
+    </div>
+    <div class="carousel-buttons">
+      <button aria-label="Imagen anterior" onclick="moverCarrusel(-1)">&#10094; </button>
+      <button aria-label="Imagen siguiente" onclick="moverCarrusel(1)">&#10095; </button>
+    </div>
+  </div>
+
+  <main>
+    <h2>¿Qué es una michelada?</h2>
+    <p>
+      Las micheladas mexicanas combinan cerveza con limón, salsas, chile y un toque de creatividad. En <strong>El Sabor Mexicano</strong> te ofrecemos las más originales y refrescantes recetas, servidas con botanas, dulces típicos y un ambiente 100% mexicano. ¡Una tradición que se toma!
+    </p>
+
+    <h2 id="galeria">Nuestras favoritas</h2>
+    <div class="galeria">
+      <img src="imagenes/mi.webp" alt="Michelada clásica" />
+      <img src="imagenes/mich.jpg" alt="Michelada con camarones" />
+      <img src="imagenes/imamic.jpg" alt="Michelada de tamarindo" />
+    </div>
+  </main>
+
+  <footer id="contacto">
+    <p>
+      <i class="fas fa-map-marker-alt"></i> Medellín, Colombia ·
+      <i class="fab fa-instagram"></i> @micheladas_mex
+    </p>
+  </footer>
+
+  <a class="whatsapp-btn" href="https://wa.me/573043058988" target="_blank">
+    <i class="fab fa-whatsapp"></i> ¡Pide ya!
+  </a>
+
+  <script>
+    const track = document.querySelector('.carousel-track');
+    let index = 0;
+
+    function moverCarrusel(direccion) {
+      const slides = document.querySelectorAll('.carousel-slide');
+      index += direccion;
+
+      if (index < 0) index = slides.length - 1;
+      if (index >= slides.length) index = 0;
+
+      track.style.transform = 'translateX(' + (-index * 100) + '%)';
+    }
+
+    setInterval(() => moverCarrusel(1), 5000);
+  </script>
+
+</body>
+</html>
+
+
